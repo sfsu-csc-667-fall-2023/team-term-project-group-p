@@ -1,11 +1,20 @@
 {
-  "name": "csc667unogroupp",
+  "name": "team-term-project-group-p",
   "version": "1.0.0",
-  "description": "Milestone one presentation: [Team_P_presentation_link](https://docs.google.com/presentation/d/1G81R6Of_CY6q1LYCDL9l1mOZv9-pdta02sUhdR7Yfww/edit?usp=sharing)",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon ./backend/server.js"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
