@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const path = require("path");
 const { createServer } = require("http");
+const testRoutes = require("./routes/test/index.js");
 
 const express = require("express");
 const createError = require("http-errors");
@@ -33,6 +34,8 @@ app.use(cookieParser());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "static")));
+app.use(express.static(path.join(__dirname, "backend", "static")));
+app.use("/test", testRoutes);
 
 const PORT = process.env.PORT || 3000;
 
@@ -83,6 +86,7 @@ io.on("connection", (socket) => {
 });
 
 const Routes = require("./routes");
+const { engine } = require("express/lib/application");
 
 app.use("/", Routes.landing);
 app.use("/auth", Routes.authentication);
