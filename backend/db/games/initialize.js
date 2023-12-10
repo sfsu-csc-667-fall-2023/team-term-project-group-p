@@ -44,7 +44,7 @@ function initializeGame(){
 
     //Player setup
     let players = [];
-    let currentPLayerIndex = Math.floor(Math.random() * players.length);
+    let currentPlayerIndex = Math.floor(Math.random() * players.length);
 
     //Deal the cards
     players.forEach(player => {
@@ -60,8 +60,8 @@ function initializeGame(){
     let gameStatus = 'in progess';
     let lastPlayedCard = discardPile[discardPile.length - 1];
 
-    return{
-        deck,
+    let game = {
+        deck: deck,
         players,
         currentPlayerIndex,
         drawPile,
@@ -70,7 +70,8 @@ function initializeGame(){
         gameStatus,
         lastPlayedCard
     };
+    
+    return game;
 
 }
-
 module.exports = initializeGame;
