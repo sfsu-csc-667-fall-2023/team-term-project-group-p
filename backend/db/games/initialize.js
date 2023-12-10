@@ -11,7 +11,7 @@ function createDeck(){
     //Regular cards
     for(let color of colors){
         for (let value of values) {
-            deck.push({ color, value}) {
+            deck.push({ color, value})
                 deck.push({color, value});
                 //each number card except 0 has dups
                 if (value !== '0'){
@@ -24,9 +24,8 @@ function createDeck(){
     for(let i = 0; i < 4; i++){
         deck.push({color: 'Wild', value: specialCards[0]});
         deck.push({color: 'Wild', value: specialCards[1]})
-        }
-    return deck;
     }
+    return deck;
 }
 
 //Deck is created now we need to shuffle
@@ -59,7 +58,7 @@ function initializeGame(){
     //Game rules
     let direction = 'clockwise';
     let gameStatus = 'in progess';
-    let lastPLayedCard = discardPile[discardPile.length - 1];
+    let lastPlayedCard = discardPile[discardPile.length - 1];
 
     return{
         deck,
