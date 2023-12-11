@@ -15,7 +15,7 @@ const { Server } = require("socket.io");
 const {
   viewSessionData,
   sessionLocals,
-  isAuthenticated,
+  isAuthenticated,requestTime
 } = require("./middleware/");
 
 const app = express();
@@ -36,6 +36,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "static")));
 app.use(express.static(path.join(__dirname, "backend", "static")));
 app.use("/test", testRoutes);
+app.use(requestTime);
 
 const PORT = process.env.PORT || 3000;
 
@@ -86,7 +87,7 @@ io.on("connection", (socket) => {
 });
 
 const Routes = require("./routes");
-const { engine } = require("express/lib/application");
+// const { engine } = require("express/lib/application");
 
 app.use("/", Routes.landing);
 app.use("/auth", Routes.authentication);

@@ -1,12 +1,15 @@
+const database = require("./connection");
+const { connection: db, pgp } = database;
+
 const { create } = require("./games/create");
 const { addUser } = require("./games/add-user");
 const { getGame } = require("./games/get-game");
 const { userCount } = require("./games/user-count");
 const { initialize } = require("./games/initialize");
-const { availableGamesForUser } = require("./games/available-games-for-user");
-const { usersInGame } = require("./games/users-in-game");
-const { currentGamesForUser } = require("./games/current-games-for-user");
-const { readyPlayer } = require("./games/ready-player");
+// const { availableGamesForUser } = require("./games/available-games-for-user");
+// const { usersInGame } = require("./games/users-in-game");
+// const { currentGamesForUser } = require("./games/current-games-for-user");
+// const { readyPlayer } = require("./games/ready-player");
 const { isInitialized } = require("./games/is-initialized");
 const { setInitialized } = require("./games/set-initialized");
 const { getState } = require("./games/get-state");
@@ -23,10 +26,10 @@ module.exports = {
   getGame,
   userCount,
   initialize,
-  availableGamesForUser,
-  currentGamesForUser,
-  usersInGame,
-  readyPlayer,
+  // availableGamesForUser,
+  // currentGamesForUser,
+  // usersInGame,
+  // readyPlayer,
   isInitialized,
   getState,
   setInitialized,

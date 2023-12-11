@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/authpages.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body class = "loginPage" >
+    <% if (locals.error) { %>
+        <p style="color: red;"><%= locals.error %></p>
+      <% }%>
+      <% if (user) { %>
+        <h1 style="color: blue;"> TEST: Logged as <%= user.username %></h1>
+    <% }%>
+      <div class="topnav">
+        <a class="active" href="/">Home</a>
+      </div>
+    <form id="login" onsubmit="return validateForm()" method="POST" action="/auth/login">
+        <div class="container">
+            <h2 class = "loginTitle">
+                Login
+            </h2>
+            <label for="userName">  Username </label>
+            <input type="text" id="username" name="username" required />
+
+
+            <label for="passWord"> Password </label>
+            <input type="password" id="password" name="password" required />
+
+            <a href="/auth/signup"> Create an Account </a> <br>
+        </div>
+            <button type="submit" class="loginbtn">Login</button>
+    </form>
+</body>
+</html>
