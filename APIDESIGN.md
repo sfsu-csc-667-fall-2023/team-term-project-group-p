@@ -71,3 +71,6 @@ Action 2: User Wins a Game
         3: Game session is terminated or continued.
 
     API Endpoint:
+        1: Game session ends
+        
+DB Diagram Link: https://dbdiagram.io/d/Uno-6551a1287d8bbd64650aa46a
