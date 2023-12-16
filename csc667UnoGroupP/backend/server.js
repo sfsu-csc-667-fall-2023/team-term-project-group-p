@@ -3,6 +3,8 @@ require("dotenv").config({path:'./.env'});
 
 const { signupRouter } = require("./routes/signup");
 const { loginRouter } = require("./routes/login");
+const { lobbyRouter } = require("./routes/lobby");
+console.log(lobbyRouter);
 
 const middleware = require('./middleware/auth');
 
@@ -40,6 +42,9 @@ app.get("/", (request, response) => {
 
 app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
+app.get("/lobby", (request, response) => {
+    response.render("lobby")
+})
 
 app.listen(PORT, () => {
 console.log(`Server started on port ${PORT}`);

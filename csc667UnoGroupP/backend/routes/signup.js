@@ -42,10 +42,7 @@ signupRouter.get("/", (req, res) => {
 
 signupRouter.post("/", (req, res) => {
     const {  username, email, password } = req.body;
-    // if (passwordValidation(password) == false) {
-    //     return res.redirect('/register?message=Password requires minimum: 8 char, 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character');
-    // }
-   
+
     db.query('SELECT * FROM users WHERE username = ? ', username, function (err, result) {
         if (err) {
             return res.status(500).json({ error: 'Error querying the database:' });

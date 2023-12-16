@@ -32,7 +32,7 @@ loginRouter.get("/", (req, res) => {
 loginRouter.post("/", (req, res) => {
     const { username, password} = req.body;
     
-    database.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
+    db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Error querying the database: ' });
         }
@@ -51,14 +51,8 @@ loginRouter.post("/", (req, res) => {
             if (!result) {
                 return res.status(401).json({ error: 'Wrong password' });
             }
-            req.session.username = user.username;
-             console.log(user.username);
-            req.session.user_type = user.user_type;
-             console.log("user_type", req.session.user_type);
-            req.session.user_id = user.users_id;
-            console.log("user id", req.session.user_id );
 
-            res.redirect('/'); // after successsful login, renders user to homepage 
+            res.render('lobby');  
 
         });
     });
