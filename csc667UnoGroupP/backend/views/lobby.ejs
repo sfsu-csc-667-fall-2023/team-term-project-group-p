@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/lobby.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lobby</title>
+    <script src="/scripts/chat.js" defer></script>
+    <script src="/scripts/lobby.js" defer></script>
+  </head>
+  <body>
+    <nav class="container">
+      <ul>
+        <li>Game</li>
+      </ul>
+      <ul>
+        <li><a href="/">Landing</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/lobby">Lobby</a></li>
+      </ul>
+    </nav>
+    <main class="container">
+      <h1>Lobby</h1>
+
+      <div class="grid">
+        <div>
+          <h2>Current Games</h2>
+          <section id="my-game-list" data-user="">
+            <ul>
+              
+            </ul>
+          </section>
+
+          <h2>Available Games</h2>
+          <section id="game-list">
+           
+          </section>
+
+          <template id="join-game-entry">
+            <li>
+              <a href=""></a>
+            </li>
+          </template>
+
+          <form action="/games/create" method="get">
+            <button type="submit">Create Game</button>
+          </form>
+        </div>
+
+      </div>
+    </main>
+  </body>
+</html>

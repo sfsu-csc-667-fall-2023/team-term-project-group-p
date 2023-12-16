@@ -1,0 +1,83 @@
+/* authpages.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../uno.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .topnav {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .container {
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+  }
+  
+  form {
+    background: rgba(19, 17, 17, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(14, 11, 11, 0.5);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .errorMSG {
+    margin-top: 10px;
+    color: red;
+  }
+  
+  .errorMSG #message {
+    padding: 10px;
+    display: block;
+  }
+  
