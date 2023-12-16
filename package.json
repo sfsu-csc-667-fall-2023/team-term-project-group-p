@@ -4,8 +4,19 @@
   "description": "Milestone one presentation: [Team_P_presentation_link](https://docs.google.com/presentation/d/1G81R6Of_CY6q1LYCDL9l1mOZv9-pdta02sUhdR7Yfww/edit?usp=sharing)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./backend/server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "http-errors": "^2.0.0",
+    "mysql2": "^3.6.5"
+  }
 }
