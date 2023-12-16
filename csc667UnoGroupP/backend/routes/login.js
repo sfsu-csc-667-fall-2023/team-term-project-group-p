@@ -1,31 +1,38 @@
 const express = require("express");
 const loginRouter = express.Router();
-//import process from 'process';
-// const frontend = process.chdir('../frontend');
-// const frontend_dir = process.cwd();
-import path from path;
-import mysql from 'mysql2';
-import bcrypt from 'bcrypt';
+const process = require("process");
+const mysql = require("mysql2");
+const bcrypt = require("bcrypt");
+const path = require('path');
 
 
-const database = mysql.createConnection({
-    host: 'localhost',
-    database: 'csc667uno',
-    user: 'root',
-    password: 'abcd',
-    
+const db = mysql.createConnection({
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE,
+    port: process.env.PORT || 3307,
+    connectTimeout: 30000
 });
-// this will render the registration page
+
+
+db.connect((err) =>{
+    if(err){
+        console.log(err)
+    }else{
+        console.log("Database connected...!")
+    }
+})
+
 loginRouter.get("/", (req, res) => {
-    res.render("landing");
-    
+    res.render('login');
 });
 
-// registers user after form submission
+
 loginRouter.post("/", (req, res) => {
     const { username, password} = req.body;
-    // res.status(200).send('Registration post page');
-    database.query('SELECT * FROM Users WHERE username = ?', [username], (err, results) => {
+    
+    database.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Error querying the database: ' });
         }
@@ -69,4 +76,4 @@ loginRouter.get("/logout", (req, res) => {
     return res.redirect('/login');
 
 })
-export { loginRouter };
+module.exports = { loginRouter };

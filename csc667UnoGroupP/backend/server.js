@@ -1,32 +1,8 @@
-// const express = require('express');
-
-// const creatError = require("http-errors");
-
-// const { requestTime } = require("./middleware/request-time");
-// const app = express();
-
-// const PORT = process.env.PORT || 3000;
-
-
-// app.use(requestTime);
-
-// const rootRoutes = require("./routes/root");
-
-
-// app.use("/", rootRoutes);
-
-// app.use((_req, res, next) => {
-//     next(createError(404));
-// });
-
-// app.listen(PORT, () =>{
-//     console.log(`Server started on port ${PORT}`);
-// })
-
 const path = require("path");
 require("dotenv").config({path:'./.env'});
 
 const { signupRouter } = require("./routes/signup");
+const { loginRouter } = require("./routes/login");
 
 const middleware = require('./middleware/auth');
 
@@ -63,6 +39,7 @@ app.get("/", (request, response) => {
 });
 
 app.use('/signup', signupRouter);
+app.use('/login', loginRouter);
 
 app.listen(PORT, () => {
 console.log(`Server started on port ${PORT}`);

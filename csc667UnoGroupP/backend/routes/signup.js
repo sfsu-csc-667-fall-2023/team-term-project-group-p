@@ -66,7 +66,7 @@ signupRouter.post("/", (req, res) => {
                     return res.redirect('/');
                 }
                 console.log('successfully created account!')
-                res.redirect('login');
+                res.redirect('/login');
             });
         });
     });
